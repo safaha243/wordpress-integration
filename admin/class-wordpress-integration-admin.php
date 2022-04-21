@@ -6,8 +6,8 @@
  * @link       https://typhon.agency
  * @since      1.0.0
  *
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/admin
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/admin
- * @author     Safa Marhaba <safa.marhaba@typhon.agency>
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/admin
+ * @author     Safa Marhaba <safamarhaba244@gmail.com>
  */
-class Icecat_Integration_Admin {
+class Wordpress_Integration_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -73,7 +73,7 @@ class Icecat_Integration_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/icecat-integration-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wordpress-integration-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Icecat_Integration_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/icecat-integration-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wordpress-integration-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
     
@@ -146,18 +146,18 @@ class Icecat_Integration_Admin {
             
     }
     public function show_forHomePage(){
-        include __DIR__.'/partials/icecat-integration-admin-display.php';
+        include __DIR__.'/partials/wordpress-integration-admin-display.php';
     }
     public function show_forSlider(){
-        include __DIR__.'/partials/icecat-integration-admin-display-slider-images.php';
+        include __DIR__.'/partials/wordpress-integration-admin-display-slider-images.php';
     }
     public function show_forOffers(){
-        include __DIR__.'/partials/icecat-integration-admin-display-offer-images.php';
+        include __DIR__.'/partials/wordpress-integration-admin-display-offer-images.php';
     }
     public function show_forSalesPackages(){
-        include __DIR__.'/partials/icecat-integration-admin-display-sales-packages.php';
+        include __DIR__.'/partials/wordpress-integration-admin-display-sales-packages.php';
     }
     public function showPage(){
-        include __DIR__.'/partials/icecat-integration-admin-display.php';
+        include __DIR__.'/partials/wordpress-integration-admin-display.php';
     }
 }
