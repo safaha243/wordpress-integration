@@ -10,10 +10,10 @@
  *
  * @link              https://typhon.agency
  * @since             1.0.0
- * @package           Icecat_Integration
+ * @package           Wordpress_Integration
  *
  * @wordpress-plugin
- * Plugin Name:       Icecat Integration
+ * Plugin Name:       Wordpress Integration
  * Plugin URI:        https://typhon.agency
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
@@ -21,7 +21,7 @@
  * Author URI:        https://typhon.agency
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       icecat-integration
+ * Text Domain:       wordpress-integration
  * Domain Path:       /languages
  */
 
@@ -35,34 +35,34 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'ICECAT_INTEGRATION_VERSION', '1.0.0' );
+define( 'WORDPRESS_INTEGRATION_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-icecat-integration-activator.php
+ * This action is documented in includes/class-wordpress-integration-activator.php
  */
-function activate_icecat_integration() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-icecat-integration-activator.php';
-	Icecat_Integration_Activator::activate();
+function activate_wordpress_integration() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-integration-activator.php';
+	Wordpress_Integration_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-icecat-integration-deactivator.php
+ * This action is documented in includes/class-wordpress-integration-deactivator.php
  */
-function deactivate_icecat_integration() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-icecat-integration-deactivator.php';
+function deactivate_wordpress_integration() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-integration-deactivator.php';
 	Icecat_Integration_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_icecat_integration' );
-register_deactivation_hook( __FILE__, 'deactivate_icecat_integration' );
+register_activation_hook( __FILE__, 'activate_wordpress_integration' );
+register_deactivation_hook( __FILE__, 'deactivate_wordpress_integration' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-icecat-integration.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-integration.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-icecat-integration.php';
  *
  * @since    1.0.0
  */
-function run_icecat_integration() {
+function run_wordpress_integration() {
 
-	$plugin = new Icecat_Integration();
+	$plugin = new Wordpress_Integration();
 	$plugin->run();
 
 }
-run_icecat_integration();
+run_wordpress_integration();
