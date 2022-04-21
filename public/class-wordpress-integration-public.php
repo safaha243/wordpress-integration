@@ -6,8 +6,8 @@
  * @link       https://typhon.agency
  * @since      1.0.0
  *
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/public
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/public
- * @author     Safa Marhaba <safa.marhaba@typhon.agency>
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/public
+ * @author     Safa Marhaba <safamarhaba244@gmail.com>
  */
-class Icecat_Integration_Public {
+class Wordpress_Integration_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Icecat_Integration_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Icecat_Integration_Loader as all of the hooks are defined
+		 * defined in Wordpress_Integration_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Icecat_Integration_Loader will then create the relationship
+		 * The Wordpress_Integration_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/icecat-integration-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wordpress-integration-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,15 +88,15 @@ class Icecat_Integration_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Icecat_Integration_Loader as all of the hooks are defined
+		 * defined in Wordpress_Integration_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Icecat_Integration_Loader will then create the relationship
+		 * The Wordpress_Integration_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/icecat-integration-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wordpress-integration-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
