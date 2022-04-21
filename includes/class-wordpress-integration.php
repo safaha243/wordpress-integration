@@ -9,8 +9,8 @@
  * @link       https://typhon.agency
  * @since      1.0.0
  *
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/includes
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/includes
- * @author     Safa Marhaba <safa.marhaba@typhon.agency>
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/includes
+ * @author     Safa Marhaba <safamarhaba244@gmail.com>
  */
-class Icecat_Integration {
+class Wordpress_Integration {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Icecat_Integration {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Icecat_Integration_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Wordpress_Integration_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class Icecat_Integration {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'ICECAT_INTEGRATION_VERSION' ) ) {
-			$this->version = ICECAT_INTEGRATION_VERSION;
+		if ( defined( 'WORDPRESS_INTEGRATION_VERSION' ) ) {
+			$this->version = WORDPRESS_INTEGRATION_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'icecat-integration';
+		$this->plugin_name = 'wordpress-integration';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Icecat_Integration {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Icecat_Integration_Loader. Orchestrates the hooks of the plugin.
-	 * - Icecat_Integration_i18n. Defines internationalization functionality.
-	 * - Icecat_Integration_Admin. Defines all hooks for the admin area.
-	 * - Icecat_Integration_Public. Defines all hooks for the public side of the site.
+	 * - Wordpress_Integration_Loader. Orchestrates the hooks of the plugin.
+	 * - Wordpress_Integration_i18n. Defines internationalization functionality.
+	 * - Wordpress_Integration_Admin. Defines all hooks for the admin area.
+	 * - Wordpress_Integration_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,36 +103,36 @@ class Icecat_Integration {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-icecat-integration-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wordpress-integration-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-icecat-integration-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wordpress-integration-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-icecat-integration-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wordpress-integration-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-icecat-integration-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wordpress-integration-public.php';
 
 		/**
 		 * The class responsible for defining all functions used for the plugin
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-icecat-functions.php';
-		$this->loader = new Icecat_Integration_Loader();
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wordpress-functions.php';
+		$this->loader = new Wordpress_Integration_Loader();
 		
 		/**
 		 * The class responsible for defining all shortcodes used for the plugin frontend
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-icecat-shortcodes.php';
-		$this->loader = new Icecat_Integration_Loader();
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wordpress-shortcodes.php';
+		$this->loader = new Wordpress_Integration_Loader();
 
 	}
 
@@ -147,7 +147,7 @@ class Icecat_Integration {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Icecat_Integration_i18n();
+		$plugin_i18n = new Wordpress_Integration_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -162,7 +162,7 @@ class Icecat_Integration {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Icecat_Integration_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Wordpress_Integration_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'display_admin_page' );
 		$this->loader->add_action( 'add_submenu_page', $plugin_admin, 'display_admin_page' );
@@ -180,7 +180,7 @@ class Icecat_Integration {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Icecat_Integration_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Wordpress_Integration_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -211,7 +211,7 @@ class Icecat_Integration {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Icecat_Integration_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Wordpress_Integration_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
