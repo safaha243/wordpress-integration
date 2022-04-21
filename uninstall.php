@@ -22,7 +22,7 @@
  * @link       https://typhon.agency
  * @since      1.0.0
  *
- * @package    Icecat_Integration
+ * @package    Wordpress_Integration
  */
 
 // If uninstall not called from WordPress, then exit.
