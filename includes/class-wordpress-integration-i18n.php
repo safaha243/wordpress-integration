@@ -9,8 +9,8 @@
  * @link       https://typhon.agency
  * @since      1.0.0
  *
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/includes
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Icecat_Integration
- * @subpackage Icecat_Integration/includes
- * @author     Safa Marhaba <safa.marhaba@typhon.agency>
+ * @package    Wordpress_Integration
+ * @subpackage Wordpress_Integration/includes
+ * @author     Safa Marhaba <safamarhaba244@gmail.com>
  */
-class Icecat_Integration_i18n {
+class Wordpress_Integration_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Icecat_Integration_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'icecat-integration',
+			'wordpress-integration',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
